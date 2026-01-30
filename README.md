@@ -11,19 +11,19 @@ Extracts password hashes from `/etc/shadow` and combines them with `/etc/passwd`
 
 ```bash
 # Interactive mode
-sudo python3 shadowsnatch.py
+sudo python3 dump.py
 
 # Basic extraction
-sudo python3 shadowsnatch.py -o hashes.txt
+sudo python3 dump.py -o hashes.txt
 
 # Filter to real users only (UID >= 1000)
-sudo python3 shadowsnatch.py -o hashes.txt --min-uid 1000
+sudo python3 dump.py -o hashes.txt --min-uid 1000
 
 # Generate a wordlist from GECOS fields
-sudo python3 shadowsnatch.py -o hashes.txt --wordlist words.txt
+sudo python3 dump.py -o hashes.txt --wordlist words.txt
 
 # Offline analysis (copied files from another system)
-sudo python3 shadowsnatch.py --passwd ./passwd.bak --shadow ./shadow.bak -o hashes.txt
+sudo python3 dump.py --passwd ./passwd.bak --shadow ./shadow.bak -o hashes.txt
 ```
 
 ## Options
